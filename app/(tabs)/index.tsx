@@ -19,7 +19,7 @@ export default function IndexScreen() {
 
   const handleLogin = async () => {
     if (!email || !password) {
-      Alert.alert('Eroare', 'Te rog să completezi toate câmpurile');
+      Alert.alert('Error', 'Please fill in all fields');
       return;
     }
 
@@ -27,20 +27,20 @@ export default function IndexScreen() {
 
     setTimeout(() => {
       if (email === 'antercode707@gmail.com' && password === '123456') {
-        Alert.alert('Succes', 'Login reușit! 🎉');
+        Alert.alert('Success', 'Login successful! 🎉');
       } else {
-        Alert.alert('Eroare', 'Email sau parolă greșită');
+        Alert.alert('Error', 'Incorrect email or password');
       }
       setIsLoading(false);
     }, 1000);
   };
 
   const handleRegister = () => {
-    Alert.alert('Info', 'Funcția de înregistrare va fi implementată în curând');
+    Alert.alert('Info', 'Registration feature will be implemented soon');
   };
 
   const handleForgotPassword = () => {
-    Alert.alert('Info', 'Funcția de resetare parolă va fi implementată în curând');
+    Alert.alert('Info', 'Password reset feature will be implemented soon');
   };
 
   return (
@@ -56,18 +56,18 @@ export default function IndexScreen() {
             style={styles.logo}
           />
           <Text style={styles.appName}>SplitMate</Text>
-          <Text style={styles.tagline}>Împarte cheltuielile cu prietenii</Text>
+          <Text style={styles.tagline}>Share expenses with friends</Text>
         </View>
 
         {/* Login Form */}
         <View style={styles.formContainer}>
-          <Text style={styles.title}>Autentificare</Text>
+          <Text style={styles.title}>Login</Text>
 
           <View style={styles.inputContainer}>
             <Text style={styles.inputLabel}>Email</Text>
             <TextInput
               style={styles.input}
-              placeholder="Introdu adresa de email"
+              placeholder="Enter your email"
               placeholderTextColor="#A0A0A0"
               value={email}
               onChangeText={setEmail}
@@ -78,10 +78,10 @@ export default function IndexScreen() {
           </View>
 
           <View style={styles.inputContainer}>
-            <Text style={styles.inputLabel}>Parolă</Text>
+            <Text style={styles.inputLabel}>Password</Text>
             <TextInput
               style={styles.input}
-              placeholder="Introdu parola"
+              placeholder="Enter your password"
               placeholderTextColor="#A0A0A0"
               value={password}
               onChangeText={setPassword}
@@ -96,28 +96,28 @@ export default function IndexScreen() {
             disabled={isLoading}
           >
             <Text style={styles.loginButtonText}>
-              {isLoading ? 'Se încarcă...' : 'Intră în cont'}
+              {isLoading ? 'Loading...' : 'Login'}
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={handleForgotPassword}>
-            <Text style={styles.forgotPassword}>Ai uitat parola?</Text>
+            <Text style={styles.forgotPassword}>Forgot your password?</Text>
           </TouchableOpacity>
         </View>
 
         {/* Register Section */}
         <View style={styles.registerSection}>
-          <Text style={styles.registerText}>Nu ai cont încă?</Text>
+          <Text style={styles.registerText}>Don’t have an account?</Text>
           <TouchableOpacity onPress={handleRegister}>
-            <Text style={styles.registerLink}>Creează cont nou</Text>
+            <Text style={styles.registerLink}>Create a new account</Text>
           </TouchableOpacity>
         </View>
 
         {/* Test Credentials */}
         <View style={styles.testInfo}>
-          <Text style={styles.testTitle}>Pentru testare:</Text>
+          <Text style={styles.testTitle}>For testing:</Text>
           <Text style={styles.testCredentials}>Email: antercode707@gmail.com</Text>
-          <Text style={styles.testCredentials}>Parolă: 123456</Text>
+          <Text style={styles.testCredentials}>Password: 123456</Text>
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
