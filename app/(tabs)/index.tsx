@@ -113,12 +113,7 @@ export default function IndexScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Test Credentials */}
-        <View style={styles.testInfo}>
-          <Text style={styles.testTitle}>For testing:</Text>
-          <Text style={styles.testCredentials}>Email: antercode707@gmail.com</Text>
-          <Text style={styles.testCredentials}>Password: 123456</Text>
-        </View>
+        
       </ScrollView>
     </KeyboardAvoidingView>
   );
