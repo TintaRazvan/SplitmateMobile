@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import React, { useState } from 'react';
 import {
   Alert,
@@ -28,6 +29,7 @@ export default function IndexScreen() {
     setTimeout(() => {
       if (email === 'antercode707@gmail.com' && password === '123456') {
         Alert.alert('Success', 'Login successful! 🎉');
+         router.replace("/homescreen");
       } else {
         Alert.alert('Error', 'Incorrect email or password');
       }
