@@ -1,13 +1,10 @@
-import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
+import { router } from "expo-router";
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function HomeScreen() {
-  const navigation = useNavigation<any>();
-
   const handleLogout = () => {
-    navigation.replace('Login'); // 👈 revenim la login
+    router.replace("/"); // 👈 te duce înapoi la login (index.tsx)
   };
 
   return (
@@ -25,32 +22,32 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0F1B14',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#0F1B14",
+    alignItems: "center",
+    justifyContent: "center",
     padding: 20,
   },
   title: {
     fontSize: 28,
-    fontWeight: 'bold',
-    color: '#4D734C',
+    fontWeight: "bold",
+    color: "#4D734C",
     marginBottom: 10,
   },
   subtitle: {
     fontSize: 18,
-    color: '#A0A0A0',
+    color: "#A0A0A0",
     marginBottom: 30,
   },
   logoutButton: {
-    backgroundColor: '#4D734C',
+    backgroundColor: "#4D734C",
     padding: 15,
     borderRadius: 12,
-    width: '60%',
-    alignItems: 'center',
+    width: "60%",
+    alignItems: "center",
   },
   logoutText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
