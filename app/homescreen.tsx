@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function HomeScreen() {
   const handleLogout = () => {
-    router.replace("/"); 
+    router.replace("/index"); 
   };
 
   return (
